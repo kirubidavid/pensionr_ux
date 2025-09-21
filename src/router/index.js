@@ -20,8 +20,18 @@ const router = createRouter({
     },
     {
       path: '/dashboard/:organizationId',
-      name: 'user-dashboard',
+      name: 'userDashboard',
       component:() => import('@/components/dashboard/UserDashboard.vue')
+    },
+    {
+      path: '/system-codes',
+      name: 'systemCodes',
+      component:() => import('@/components/system/SystemCode.vue')
+    },
+    {
+      path: '/system-values',
+      name: 'systemValues',
+      component:() => import('@/components/system/SystemValue.vue')
     }
   ]
 });
