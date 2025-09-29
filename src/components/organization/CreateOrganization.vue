@@ -8,10 +8,10 @@
     </div>
 
     <div>
-      <input type="text" placeholder="Name" />
-      <input type="text" placeholder="Email" />
-      <input type="text" placeholder="Phone" />
-      <input type="text" placeholder="Tax Pin" />
+      <input type="text" placeholder="Name" v-model="txtOrganizationName" />
+      <input type="text" placeholder="Email" v-model="txtEmail"  />
+      <input type="text" placeholder="Phone" v-model="txtPhone" />
+      <input type="text" placeholder="Tax Pin" v-model="txtTaxPin" />
     </div>
 
   </PageLayout>
@@ -28,13 +28,21 @@ export default {
     PageLayout,
     BreadCrumbs,
   },
+  data() {
+    return {
+      txtOrganizationName: null,
+      txtEmail: null,
+      txtPhone: null,
+      txtTaxPin: null
+    }
+  },
   methods: {
 
     createOrganization() {
 
       var createOrganizationData = {
-        txtOrganizationName : 'New Organization',
-        txtTaxPin : 'A000000X',
+        txtOrganizationName : this.txtOrganizationName,
+        txtTaxPin : this.txtTaxPin
       };
 
       this.$axios.post('/organization/create-organization', createOrganizationData).then(response => {

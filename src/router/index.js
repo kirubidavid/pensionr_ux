@@ -19,9 +19,29 @@ const router = createRouter({
       component:() => import('@/components/organization/CreateOrganization.vue')
     },
     {
-      path: '/dashboard/:organizationId',
+      path: '/dashboard/:orgId',
       name: 'userDashboard',
       component:() => import('@/components/dashboard/UserDashboard.vue')
+    },
+    {
+      path: '/schemes',
+      name: 'schemes',
+      component:() => import('@/components/scheme/AllSchemes.vue')
+    },
+    {
+      path: '/schemes/create',
+      name: 'schemeCreate',
+      component:() => import('@/components/scheme/CreateScheme.vue')
+    },
+    {
+      path: '/scheme/create/pension',
+      name: 'schemeCreatePension',
+      component:() => import('@/components/scheme/CreatePensionScheme.vue')
+    },
+    {
+      path: '/scheme/create/gratuity',
+      name: 'schemeCreateGratuity',
+      component:() => import('@/components/scheme/CreateGratuityScheme.vue')
     },
     {
       path: '/system-codes',
